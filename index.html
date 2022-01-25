@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>hello world branch attempt 1</h1>
-    <h2>attempt2</h2>
-    <h3>attempt4</h3>
-    <h2>attempt5</h2>
-  </body>
+<html>
+    <body>
+    <div id="container"></div>
+    <br>
+    <div>
+    <form class="" action="index.html">
+      Industry : <select name="industry" id="industry" style="width:300px">
+                  </select>
+      Industry2:<select name="industry2" id="industry2" style="width:300px">
+                  </select>
+    </form>
+    </div>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="industry.js"></script>
+    <script>
+
+$(document).ready(function() {
+   $('#industry').click(function() {
+     var values = window.industryLookUp
+
+
+       for (const val of values) {
+           $('#industry').append($(document.createElement('option')).prop({
+               value: val.value,
+               text: val.value.charAt(0).toUpperCase() + val.value.slice(1)
+           }))
+       }
+   })
+});
+    </script>
+
+
+    <script type="text/javascript">
+    document.getElementById('industry2').onclick = function() {
+
+    var values = ["dog", "cat", "parrot", "rabbit"];
+
+    var select = document.getElementById('industry2');
+
+    for (const val of values)
+    {
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select.appendChild(option);
+    }
+
+
+}
+
+    </script>
+    </body>
 </html>
